@@ -19,8 +19,46 @@
 		          <!-- general form elements -->
 		          <div class="box box-primary">
 		            <div class="box-header with-border">
-		              <h3 class="box-title">Quick Example</h3>
-		            </div>
+			            <h3 class="box-title">
+			            	<a href="{{ route('all_vendors') }}" class="btn btn-info btn-sm">
+			            		<i class="fa fa-backward"></i> List of Vendors 
+			            	</a> 
+			            </h3>
+			            <div class="box-tools pull-right">
+			                
+			            </div>
+			        </div>
+
+	
+						@if(session('error'))
+							<div class="alert alert-danger alert-dismissible">
+							    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							    <i class="icon fa fa-ban"></i>
+							    {{ session('error') }}
+							</div>
+						@endif
+
+						@if(session('success'))
+							<div class="alert alert-success alert-dismissible">
+							    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							    <i class="icon fa fa-ban"></i>
+							    {{ session('success') }}
+							</div>
+						@endif
+
+						@if (count($errors) > 0)
+
+						    @foreach($errors->all() as $error)
+
+						        <div class="alert alert-danger alert-dismissible">
+							    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							    <i class="icon fa fa-ban"></i>
+							    {{ $error }}
+							</div>
+						    @endforeach
+
+						@endif
+
 						<form action="{{ route('add_vendors') }}" method="POST">
 
 							{{ csrf_field() }}
@@ -30,7 +68,7 @@
 			                	<div class="col-md-6">
 			                		<div class="form-group">
 					                  <label for="fullname">Full Name</label>
-					                  <input type="text" class="form-control" name="full_name" placeholder="Enter eFull Name">
+					                  <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name">
 					                </div>
 			                	</div>
 			                	<div class="col-md-6">

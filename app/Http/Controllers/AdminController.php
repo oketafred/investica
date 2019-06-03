@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Sentinel;
 use Validator;
+use Session;
 use App\User;
 use App\Property;
 
@@ -54,13 +55,10 @@ class AdminController extends Controller
         ]);
 
         if ($validator->fails()) {
+                
+            Session::flash('error', 'Please Check your Inputs');
 
-            $notification = array(
-                'message' => 'Please Check your Inputs',
-                'alert-type' => 'error'
-            );
-
-            return redirect("register")->with($notification);
+            return redirect()->back();
         }
 
 
@@ -77,12 +75,9 @@ class AdminController extends Controller
 
         $role->users()->attach($user);
 
-        $notification = array(
-            'message' => 'Registration Successful. Please Login',
-            'alert-type' => 'error'
-        );
+        Session::flash('success', 'A New Vendor Added Registration Successful.');
 
-    	return redirect()->back()->with($notification);
+    	return redirect()->back();
 
 
     }

@@ -47,7 +47,7 @@
                       <td><img src="{{ asset("properties/" . $property_image[0]) }}" width="80px" height="50px"></td>
                       <td>123123456</td>
                       <td>{{ $approvedProperty->type }}</td>
-                      <td>{{ $approvedProperty->price }}</td>
+                      <td>{{ number_format(approvedProperty->price) }}</td>
                       <td>{{ $approvedProperty->address }}</td>
                       <td>{{ $approvedProperty->city }}</td>
                       <td>{{ $approvedProperty->state }}</td>

@@ -72,17 +72,17 @@
 <!-- Sparkline -->
 <script src="{{ asset("adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js") }}"></script>
 <!-- jvectormap  -->
-<script src="{{ asset("adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") }}"></script>
-<script src="{{ asset("adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") }}"></script>
+{{-- <script src="{{ asset("adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") }}"></script> --}}
+{{-- <script src="{{ asset("adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") }}"></script> --}}
 <!-- SlimScroll -->
 <script src="{{ asset("adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js") }}"></script>
 <!-- DataTables -->
 <script src="{{ asset("adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js") }}"></script>
 <!-- ChartJS -->
-<script src="{{ asset("adminlte/bower_components/chart.js/Chart.js") }}"></script>
+{{-- <script src="{{ asset("adminlte/bower_components/chart.js/Chart.js") }}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset("adminlte/dist/js/pages/dashboard2.js") }}"></script>
+{{-- <script src="{{ asset("adminlte/dist/js/pages/dashboard2.js") }}"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset("adminlte/dist/js/demo.js") }}"></script>
 <script>
@@ -97,6 +97,46 @@
       'autoWidth'   : false
     })
   })
+</script>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 </script>
 
 </body>

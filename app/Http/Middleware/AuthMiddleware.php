@@ -24,7 +24,7 @@ class AuthMiddleware
                 
             }else{
 
-                 Alert::error('Oops!', 'Please Login to View Property Vetails.');
+                 Alert::error('Oops!', 'Please Login to View Property Details.');
 
                 return redirect('/');
 

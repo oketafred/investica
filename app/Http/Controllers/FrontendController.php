@@ -59,10 +59,10 @@ class FrontendController extends Controller
                             ->where('city', '=', $request->city)
                             ->where('country', '=', $request->country)
                             ->orWhere('status', '=', $request->status)
-                            ->orWhereBetween('price', [$request->price_min, $request->price_max])
-                            ->orWhereBetween('area', [$request->area_min, $request->area_max])
                             ->orWhere('bed_rooms', '=', $request->bed_rooms)
                             ->orWhere('bath_rooms', '=', $request->bath_rooms)
+                            ->orWhereBetween('price', [$request->price_min, $request->price_max])
+                            ->orWhereBetween('area', [$request->area_min, $request->area_max])
                             ->paginate(10);
 
 

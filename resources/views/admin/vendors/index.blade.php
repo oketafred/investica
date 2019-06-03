@@ -18,8 +18,18 @@
         <div class="col-md-12">
 		<div class="box">
             <!-- /.box-header -->
+            <div class="box-header with-border">
+                  <h3 class="box-title">
+                    <a href="{{ route('add_vendors') }}" class="btn btn-info btn-sm">
+                      <i class="fa fa-backward"></i> Add a New Vendor 
+                    </a> 
+                  </h3>
+                  <div class="box-tools pull-right">
+                      
+                  </div>
+              </div>
             <div class="box-body no-padding">
-              <table class="table table-striped">
+              <table id="#example2" class="table table-striped">
                 <tr>
                   <th>#</th>
                   {{-- <th>Vendor Photo</th> --}}
